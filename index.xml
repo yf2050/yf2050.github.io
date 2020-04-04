@@ -44,6 +44,113 @@
     </item>
     
     <item>
+      <title>用hugo搭建博客github上</title>
+      <link>http://localhost:1313/post/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2github%E4%B8%8A/</link>
+      <pubDate>Sat, 04 Apr 2020 21:40:31 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2github%E4%B8%8A/</guid>
+      
+        <description>&lt;h1 id=&#34;由于自己搭建博客-第一次踩了很多坑-下面面向小白包括自己整理所有相关坑和步骤如果出现问题多搜搜有足够耐心就行&#34;&gt;由于自己搭建博客 第一次踩了很多坑 下面面向小白包括自己整理所有相关坑和步骤，如果出现问题多搜搜,有足够耐心就行&lt;/h1&gt;
+&lt;h1 id=&#34;点击预览我的博客httpsyufeng2020monster&#34;&gt;点击预览&lt;a href=&#34;https://yufeng2020.monster/&#34;&gt;我的博客&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;首先我们搭建博客，需要干嘛？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;先在本地写文章，一般都是最流行的文章编辑器makedown,自己一般用的是vscode进行编写&lt;/li&gt;
+&lt;li&gt;写完文章，需要上传保存，相当于远程仓库，一般为Gitub&lt;/li&gt;
+&lt;li&gt;上传后给别人看文章时，不能给别人个github吧，github 中有个github page可以把上传的文章以HTML显示 也就是网页&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;1-hugoexe的安装和环境配置&#34;&gt;1. hugo.exe的安装和环境配置&lt;/h2&gt;
+&lt;p&gt;搭建博客那么我们先来了解下hugo吧，Hugo是最受欢迎的开源静态站点生成器之一。凭借其惊人的速度和灵活性，使构建网站变得有趣。那么先点击官网：&lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo官网&lt;/a&gt;,用中文翻译阅读 国外网站常谷歌浏览器翻译
+&lt;img src=&#34;%E9%9B%A8%E6%9E%9C.png&#34; alt=&#34;雨果&#34;&gt;
+安装hugo
+&lt;a href=&#34;https://gohugo.io/getting-started/installing&#34;&gt;官方教程&lt;/a&gt;
+mac用户：brew install hugo version
+window用户：
+&lt;a href=&#34;https://github.com/gohugoio/hugo/releases&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;解压，把&lt;code&gt;hugo.exe&lt;/code&gt;放在&lt;code&gt;D:\Software\hugo\hugo.exe&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;把D:\Software\hugo加到PATH中新建 此电脑右键属性-高级变量-环境变量中&lt;/li&gt;
+&lt;li&gt;重启终端 运行命令&lt;code&gt;hugo version&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-从第一步实现到第七步&#34;&gt;2. 从第一步实现到第七步&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;建立新网站
+&lt;pre&gt;&lt;code&gt;hugo new site github的账户名.github.io-creator
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;例如我的为&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo new site yf2050.github.io-creator
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-进入目录cerator-在内部创本地仓库&#34;&gt;3. 进入目录&lt;code&gt;cerator&lt;/code&gt; 在内部创本地仓库&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;cd yf2050.github.io-creator
+git init
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;4-下载主题-这一步如果错误-多下载几次或搜网上其他hugo主题&#34;&gt;4. 下载主题 这一步如果错误 多下载几次或搜网上其他hugo主题&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;5-把主题加进去&#34;&gt;5. 把主题加进去&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;echo &#39;theme = &amp;quot;ananke&amp;quot;&#39; &amp;gt;&amp;gt; config.toml
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;6-添加一些内容-你的文章名&#34;&gt;6. 添加一些内容 你的文章名&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;hugo new posts/my-first-post.md
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;7-打开当前目录-选中文章-常在content的post文件夹中-不在就移进去&#34;&gt;7. 打开当前目录 选中文章 常在content的post文件夹中 不在就移进去&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;---
+title: &amp;quot;My First Post&amp;quot;
+date: 2019-03-26T08:47:11+01:00
+draft: true
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;前面不要动 这里才写正文 makedown格式写
+写完把&lt;code&gt;draft:true&lt;/code&gt;删掉 代表已经写完了&lt;/p&gt;
+&lt;h2 id=&#34;8-启动hugo服务器-运行命令hugo-server--d&#34;&gt;8. 启动Hugo服务器 运行命令&lt;code&gt;hugo server -D&lt;/code&gt;&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;  hugo server -D
+
+                    | EN
+ +------------------+----+
+   Pages            | 10
+   Paginator pages  |  0
+   Non-page files   |  0
+   Static files     |  3
+   Processed images |  0
+   Aliases          |  1
+   Sitemaps         |  1
+   Cleaned          |  0
+
+ Total in 11 ms
+ Watching for changes in /Users/bep/quickstart/{content,data,layouts,static,themes}
+ Watching for config changes in /Users/bep/quickstart/config.toml
+ Environment: &amp;quot;development&amp;quot;
+ Serving pages from memory
+ Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+ Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+ Press Ctrl+C to stop
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;此时浏览站点 在倒数第三行&lt;a href=&#34;http://localhost:1313/&#34;&gt;http://localhost:1313/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;9-自定义主题-这里坑比较多-其他主题比较麻烦配置-默认主题按下面配置-configtoml在文本编辑器中打开&#34;&gt;9. 自定义主题 这里坑比较多 其他主题比较麻烦配置 默认主题按下面配置 &lt;code&gt;config.toml&lt;/code&gt;在文本编辑器中打开：&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;baseURL = &amp;quot;https://example.org/&amp;quot;
+languageCode = &amp;quot;zh-Hans&amp;quot;
+title = &amp;quot;想一个博客名&amp;quot;
+theme = &amp;quot;ananke&amp;quot;  
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;baseURL&lt;/code&gt;地址，如果已经买好域名可以填上，先不用管
+&lt;code&gt;theme&lt;/code&gt;是主题的名字 一般为下载主题的最后一个词&lt;/p&gt;
+&lt;h2 id=&#34;10-新建一个终端来建立静态页面-运行&#34;&gt;10. 新建一个终端，来建立静态页面 运行&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;  hugo -D
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;crector目录里会多一个文件夹public&lt;/p&gt;
+&lt;h2 id=&#34;11-隐藏public目录-在当前新建文件夹gitignore里面填写内容public来隐藏-进入public目录-现在就相当于把public以内和以外分别存在不同的地方&#34;&gt;11. 隐藏&lt;code&gt;public&lt;/code&gt;目录 在当前新建文件夹&lt;code&gt;.gitignore&lt;/code&gt;里面填写内容&lt;code&gt;/public/&lt;/code&gt;来隐藏 进入&lt;code&gt;public&lt;/code&gt;目录 现在就相当于把&lt;code&gt;public&lt;/code&gt;以内和以外分别存在不同的地方&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;cd public
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;再新建public的本地库&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git inti
+
+git add .
+
+git commit .
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;此时还没发上传 因为没有远程库&lt;/p&gt;
+&lt;h2 id=&#34;12-在github新建库&#34;&gt;12. 在github新建库&lt;/h2&gt;
+&lt;p&gt;new-库名字跟前面的必须一致，我的为&lt;code&gt;yf2050.github.io&lt;/code&gt;
+打开远库 然后连接public本地库 最后两条代码 把&lt;code&gt;public&lt;/code&gt;的全部提交了
+刷新github即可
+此时在github 的settings中 github pages显示的网址即可访问&lt;/p&gt;
+&lt;p&gt;查看&lt;a href=&#34;yufeng2020.github.io&#34;&gt;我的博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;现在我买了域名 换了主题 现在为&lt;a href=&#34;https://yufeng2020.monster/&#34;&gt;新的博客&lt;/a&gt;
+域名问题下节继续更&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>第三篇微博</title>
       <link>http://localhost:1313/post/%E7%AC%AC%E4%B8%89%E7%AF%87%E5%BE%AE%E5%8D%9A/</link>
       <pubDate>Sat, 04 Apr 2020 18:49:04 +0800</pubDate>

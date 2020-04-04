@@ -6,7 +6,7 @@
     <description>Recent content in Posts on 小峰同学的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 04 Apr 2020 18:49:04 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 04 Apr 2020 21:40:31 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,6 +18,15 @@
       
       <guid>http://localhost:1313/post/jane-theme-preview/</guid>
       <description>主题预览,内容有待填充。</description>
+    </item>
+    
+    <item>
+      <title>用hugo搭建博客github上</title>
+      <link>http://localhost:1313/post/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2github%E4%B8%8A/</link>
+      <pubDate>Sat, 04 Apr 2020 21:40:31 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2github%E4%B8%8A/</guid>
+      <description>由于自己搭建博客 第一次踩了很多坑 下面面向小白包括自己整理所有相关坑和步骤，如果出现问题多搜搜,有足够耐心就行 点击预览我的博客 首先我们搭建博客</description>
     </item>
     
     <item>
